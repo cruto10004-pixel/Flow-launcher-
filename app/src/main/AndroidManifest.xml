@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.flow.launcher">
 
-    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <!-- Лаунчеру нужен полный список приложений для App Drawer и поиска -->
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
 
