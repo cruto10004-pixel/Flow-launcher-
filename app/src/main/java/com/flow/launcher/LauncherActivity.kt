@@ -1,5 +1,6 @@
 package com.flow.launcher
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,9 @@ class LauncherActivity : AppCompatActivity() {
         }
     }
 
+    // Намеренно не вызываем super: на главном экране «Назад» ничего не делает,
+    // иначе Activity лаунчера завершится.
+    @SuppressLint("MissingSuperCall")
     override fun onBackPressed() {
         val current = supportFragmentManager.findFragmentById(R.id.fragment_container)
         if (current !is HomeFragment) {
